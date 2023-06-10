@@ -1,8 +1,37 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { sleep } from "../../utils"
 
 const Hero = () => {
-  const [word1, setWord1] = useState("eering ")
-  const [word2, setWord2] = useState("made")
+  const [word1, setWord1] = useState("")
+  const [word2, setWord2] = useState("")
+
+  useEffect(() => {
+    const _word1 = "eering "
+    const word1Timeout = setTimeout(() => {
+      ;(async function () {
+        for (let i = 0; i < _word1.length; i++) {
+          await sleep(110).then(() => {
+            setWord1((t) => t + _word1[i])
+          })
+        }
+      })()
+    }, 1000)
+    const _word2 = "made"
+    const word2Timeout = setTimeout(() => {
+      ;(async function () {
+        for (let i = 0; i < _word2.length; i++) {
+          await sleep(110).then(() => {
+            setWord2((t) => t + _word2[i])
+          })
+        }
+      })()
+    }, 1700)
+    return () => {
+      clearTimeout(word1Timeout)
+      clearTimeout(word2Timeout)
+    }
+  }, [])
+
   return (
     <section>
       <div className="flex items-center">
