@@ -15,8 +15,8 @@ const Hero = () => {
           })
         }
       })()
-    }, 1000)
-    const _word2 = "made"
+    }, 1500)
+    const _word2 = "made "
     const word2Timeout = setTimeout(() => {
       ;(async function () {
         for (let i = 0; i < _word2.length; i++) {
@@ -25,7 +25,7 @@ const Hero = () => {
           })
         }
       })()
-    }, 1700)
+    }, 2300)
     return () => {
       clearTimeout(word1Timeout)
       clearTimeout(word2Timeout)
@@ -39,7 +39,9 @@ const Hero = () => {
           <div className="flex items-end">
             <img src="./volunteasy1.png" />
             <span className="pb-1 text-3xl whitespace-pre">{word1}</span>
-            <span className="pb-1 text-3xl font-semibold">{word2}</span>
+            <span className="pb-1 text-3xl font-semibold whitespace-pre">
+              {word2}
+            </span>
             <img src="./volunteasy2.png" />
           </div>
           <div>
