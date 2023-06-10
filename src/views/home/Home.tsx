@@ -1,5 +1,7 @@
+import About from "./About"
 import Hero from "./Hero"
 import Nav from "./Nav"
+import Organisations from "./Organisations"
 import Volunteers from "./Volunteers"
 
 const Home = () => {
@@ -10,6 +12,10 @@ const Home = () => {
         <Hero />
       </div>
       <Volunteers />
+      <div className="py-20">
+        <Organisations />
+      </div>
+      <About />
     </div>
   )
 }
