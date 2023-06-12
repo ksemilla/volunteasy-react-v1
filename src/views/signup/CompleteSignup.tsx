@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form"
 import { classNames } from "../../utils"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const CompleteSignup = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
   const onSubmit = handleSubmit((_data) => {
-    console.log("x")
+    navigate("/signup/org/flow-1")
   })
 
   return (
