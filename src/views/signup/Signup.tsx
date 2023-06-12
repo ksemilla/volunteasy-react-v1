@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom"
-import SignupNav from "./SignupNav"
 
 const Signup = () => {
   return (
     <div className="max-w-5xl m-auto">
-      <SignupNav />
       <div className="mt-20 py-12 px-12 border border-purple-500 rounded-[100px] space-y-20">
         <h1 className="text-4xl text-center">
           Join as an <span className="text-purple-600">Organisation</span> or a{" "}
           <span className="text-purple-600">Volunteer</span>
         </h1>
         <div className="flex justify-center space-x-16">
-          <div className="border border-purple-600 p-8 rounded-[50px]">
+          <Link
+            to="org"
+            className="border border-purple-600 p-8 rounded-[50px]"
+          >
             <div>
               <i className="fa-solid fa-magnifying-glass text-blue-500 text-3xl"></i>
             </div>
@@ -22,7 +23,7 @@ const Signup = () => {
               </span>{" "}
               looking for Volunteers
             </p>
-          </div>
+          </Link>
           <div className="border border-purple-600 p-8 rounded-[50px]">
             <div>
               <i className="fa-solid fa-briefcase text-blue-500 text-3xl"></i>
