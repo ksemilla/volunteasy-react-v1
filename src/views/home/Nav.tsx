@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Nav = () => {
   return (
     <nav className="py-4 flex items-center justify-between space-x-10 font-medium border-b border-gray-100">
@@ -11,9 +13,13 @@ const Nav = () => {
         <button className="border-2 border-purple-600 px-4 py-1 rounded-full">
           Login
         </button>
-        <button className="border border-purple-600 bg-purple-600 px-4 py-1 rounded-full text-white hover:bg-purple-700">
+
+        <Link
+          to="/signup"
+          className="border border-purple-600 bg-purple-600 px-4 py-1 rounded-full text-white hover:bg-purple-700"
+        >
           Signup
-        </button>
+        </Link>
       </div>
     </nav>
   )
