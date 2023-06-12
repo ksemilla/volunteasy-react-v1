@@ -1,5 +1,4 @@
-import { useForm } from "react-hook-form"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { classNames } from "../../utils"
 
 import { Listbox, Transition } from "@headlessui/react"
@@ -31,15 +30,6 @@ const OrgSignupFlow2 = () => {
     id: number
     name: string
   }>(industryList[0])
-  const navigate = useNavigate()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm()
-  const onSubmit = handleSubmit((_data) => {
-    navigate("/signup/org/flow-1")
-  })
   return (
     <div className="mt-10 border border-purple-500 rounded-[50px] p-10 sm:mx-auto sm:w-full sm:max-w-3xl">
       <div className="my-4">
