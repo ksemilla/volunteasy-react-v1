@@ -7,6 +7,7 @@ import CompleteSignup from "../views/signup/CompleteSignup"
 import OrgSignupFlow1 from "../views/signup/OrgSignupFlow1"
 import OrgSignupFlow2 from "../views/signup/OrgSignupFlow2"
 import OrgSignupFlow3 from "../views/signup/OrgSignupFlow3"
+import VerifyEmail from "../views/signup/VerifyEmail"
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="org">
             <Route path="" element={<OrgSignup />} />
             <Route path="complete-signup" element={<CompleteSignup />} />
+            <Route path="verify-email" element={<VerifyEmail />} />
             <Route path="flow-1" element={<OrgSignupFlow1 />} />
             <Route path="flow-2" element={<OrgSignupFlow2 />} />
             <Route path="flow-3" element={<OrgSignupFlow3 />} />

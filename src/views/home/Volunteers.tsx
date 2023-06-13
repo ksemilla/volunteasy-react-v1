@@ -87,27 +87,27 @@ const Processes = () => {
   >([
     {
       description: "Join our platform",
-      imgSrc: "./process1.png",
+      imgSrc: "/process1.png",
       status: "current",
     },
     {
       description: "Post Volunteer Assignments",
-      imgSrc: "./process2.png",
+      imgSrc: "/process2.png",
       status: "upcoming",
     },
     {
       description: "Assess Volunteer Applications",
-      imgSrc: "./process3.png",
+      imgSrc: "/process3.png",
       status: "upcoming",
     },
     {
       description: "Onboard Volunteers",
-      imgSrc: "./process4.png",
+      imgSrc: "/process4.png",
       status: "upcoming",
     },
     {
       description: "Review Volunteer",
-      imgSrc: "./process5.png",
+      imgSrc: "/process5.png",
       status: "upcoming",
     },
   ])

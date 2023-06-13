@@ -37,12 +37,12 @@ const Hero = () => {
       <div className="flex items-center">
         <div className="flex-1 space-y-10 flex flex-col items-center">
           <div className="flex items-end">
-            <img src="./volunteasy1.png" />
+            <img src="/volunteasy1.png" />
             <span className="pb-1 text-3xl whitespace-pre">{word1}</span>
             <span className="pb-1 text-3xl font-semibold whitespace-pre">
               {word2}
             </span>
-            <img src="./volunteasy2.png" />
+            <img src="/volunteasy2.png" />
           </div>
           <div>
             <p className="text-2xl font-normal text-center max-w-[470px]">
@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex-1 flex justify-center items-center">
-          <img src="./hero-img.png" width={400} />
+          <img src="/hero-img.png" width={400} />
         </div>
       </div>
     </section>

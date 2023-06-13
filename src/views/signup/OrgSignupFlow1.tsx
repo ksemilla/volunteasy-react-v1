@@ -440,19 +440,22 @@ const OrgSignupFlow1 = () => {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-end gap-x-6">
-          <button
-            type="button"
-            className="text-sm font-semibold leading-6 text-gray-900"
+        <div className="mt-6 flex items-center justify-between">
+          <Link
+            to="/signup/org/verify-email"
+            className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="inline-flex justify-center rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+            <i className="fa-solid fa-chevron-left"></i>
+            Back
+          </Link>
+
+          <Link
+            to="/signup/org/flow-2"
+            className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
-            Save
-          </button>
+            Next
+            <i className="fa-solid fa-chevron-right"></i>
+          </Link>
         </div>
       </form>
     </div>

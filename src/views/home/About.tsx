@@ -39,7 +39,7 @@ const About = () => {
         className="flex justify-center py-2"
       >
         <div>
-          <img src="./logo-filled.png" />
+          <img src="/logo-filled.png" />
         </div>
       </div>
     </section>

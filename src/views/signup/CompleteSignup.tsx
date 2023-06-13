@@ -10,7 +10,7 @@ const CompleteSignup = () => {
     formState: { errors },
   } = useForm()
   const onSubmit = handleSubmit((_data) => {
-    navigate("/signup/org/flow-1")
+    navigate("/signup/org/verify-email")
   })
 
   return (
