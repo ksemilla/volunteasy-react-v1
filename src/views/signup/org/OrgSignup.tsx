@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
-import { classNames } from "../../utils"
+import { classNames } from "../../../utils"
 
 export default function OrgSignup() {
   const navigate = useNavigate()

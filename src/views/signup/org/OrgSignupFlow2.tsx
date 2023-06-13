@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import { classNames } from "../../utils"
+import { classNames } from "../../../utils"
+
 const steps = [
   { name: "Basic Info", href: "/signup/org/flow-1", status: "complete" },
   { name: "Contact", href: "/signup/org/flow-2", status: "complete" },
-  { name: "Details", href: "/signup/org/flow-3", status: "complete" },
+  { name: "Details", href: "/signup/org/flow-3", status: "upcoming" },
 ]
 
-const OrgSignupFlow3 = () => {
+const OrgSignupFlow2 = () => {
   return (
     <div className="mt-10 border border-purple-500 rounded-[50px] p-10 sm:mx-auto sm:w-full sm:max-w-3xl">
       <div className="my-4">
@@ -26,7 +27,12 @@ const OrgSignupFlow3 = () => {
                       className="absolute inset-0 flex items-center"
                       aria-hidden="true"
                     >
-                      <div className="h-0.5 w-full bg-purple-600" />
+                      <div
+                        className={classNames(
+                          "h-0.5 w-full",
+                          stepIdx === 0 ? "bg-purple-600" : "bg-gray-200"
+                        )}
+                      />
                     </div>
                     <Link
                       to={step.href}
@@ -95,17 +101,16 @@ const OrgSignupFlow3 = () => {
                   htmlFor="username"
                   className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
                 >
-                  Headline Summary
+                  Address Line 1 <sup>*</sup>
                 </label>
                 <div className="mt-2 sm:col-span-9 sm:mt-0">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
-                    <textarea
+                    <input
+                      type="text"
                       name="username"
                       id="username"
                       autoComplete="username"
                       className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                      rows={5}
-                      placeholder="Summarize your Organisation in a few sentences"
                     />
                   </div>
                 </div>
@@ -115,17 +120,16 @@ const OrgSignupFlow3 = () => {
                   htmlFor="username"
                   className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
                 >
-                  About
+                  Address Line 2
                 </label>
                 <div className="mt-2 sm:col-span-9 sm:mt-0">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
-                    <textarea
+                    <input
+                      type="text"
                       name="username"
                       id="username"
                       autoComplete="username"
                       className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                      rows={5}
-                      placeholder="Tell the Volunteers about your Organisation and its origins"
                     />
                   </div>
                 </div>
@@ -135,17 +139,16 @@ const OrgSignupFlow3 = () => {
                   htmlFor="username"
                   className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
                 >
-                  Objectives
+                  Address Line 3
                 </label>
                 <div className="mt-2 sm:col-span-9 sm:mt-0">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
-                    <textarea
+                    <input
+                      type="text"
                       name="username"
                       id="username"
                       autoComplete="username"
                       className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                      rows={5}
-                      placeholder="Describe who your Organisation helps (your beneficiaries), how our Organisation helps them (your services), and why your help matters (your impact)"
                     />
                   </div>
                 </div>
@@ -155,17 +158,96 @@ const OrgSignupFlow3 = () => {
                   htmlFor="username"
                   className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
                 >
-                  Activities
+                  Town <sup>*</sup>
                 </label>
                 <div className="mt-2 sm:col-span-9 sm:mt-0">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
-                    <textarea
+                    <input
+                      type="text"
                       name="username"
                       id="username"
                       autoComplete="username"
                       className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                      rows={5}
-                      placeholder="Describe what your Organisation does to meet its objectives"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="sm:grid sm:grid-cols-12 sm:items-start sm:gap-4">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
+                >
+                  Postcode <sup>*</sup>
+                </label>
+                <div className="mt-2 sm:col-span-9 sm:mt-0">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="sm:grid sm:grid-cols-12 sm:items-start sm:gap-4">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
+                >
+                  Contact Name <sup>*</sup>
+                </label>
+                <div className="mt-2 sm:col-span-9 sm:mt-0">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="w-full block flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="sm:grid sm:grid-cols-12 sm:items-start sm:gap-4">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
+                >
+                  Contact Email <sup>*</sup>
+                </label>
+                <div className="mt-2 sm:col-span-9 sm:mt-0">
+                  <div className="relative rounded-md shadow-sm">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <i className="fa-solid fa-envelope text-gray-500"></i>
+                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+              </div>{" "}
+              <div className="sm:grid sm:grid-cols-12 sm:items-start sm:gap-4">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5 sm:col-span-3"
+                >
+                  Phone Number <sup>*</sup>
+                </label>
+                <div className="mt-2 sm:col-span-9 sm:mt-0">
+                  <div className="relative rounded-md shadow-sm">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <i className="fa-solid fa-phone text-gray-500"></i>
+                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -176,7 +258,7 @@ const OrgSignupFlow3 = () => {
 
         <div className="mt-6 flex items-center justify-between">
           <Link
-            to="/signup/org/flow-2"
+            to="/signup/org/flow-1"
             className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
             <i className="fa-solid fa-chevron-left"></i>
@@ -187,7 +269,8 @@ const OrgSignupFlow3 = () => {
             to="/signup/org/flow-3"
             className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
-            Submit
+            Next
+            <i className="fa-solid fa-chevron-right"></i>
           </Link>
         </div>
       </form>
@@ -195,4 +278,4 @@ const OrgSignupFlow3 = () => {
   )
 }
 
-export default OrgSignupFlow3
+export default OrgSignupFlow2

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import { classNames } from "../../utils"
 import { Listbox, Transition } from "@headlessui/react"
 import { Fragment, useState } from "react"
+import { classNames } from "../../../utils"
 
 const steps = [
   { name: "Basic Info", href: "/signup/org/flow-1", status: "complete" },

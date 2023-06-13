@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { classNames } from "../../utils"
+import { classNames } from "../../../utils"
 import { Link, useNavigate } from "react-router-dom"
 
 const CompleteSignup = () => {

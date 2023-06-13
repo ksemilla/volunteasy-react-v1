@@ -11,7 +11,7 @@ const Signup = () => {
         <div className="flex justify-center space-x-16">
           <Link
             to="org"
-            className="border border-purple-600 p-8 rounded-[50px]"
+            className="border p-8 rounded-[50px] bg-white shadow relative top-0 right-0 transition-all duration-200 ease-in-out hover:-top-1 hover:-right-1"
           >
             <div>
               <i className="fa-solid fa-magnifying-glass text-blue-500 text-3xl"></i>
@@ -24,7 +24,10 @@ const Signup = () => {
               looking for Volunteers
             </p>
           </Link>
-          <div className="border border-purple-600 p-8 rounded-[50px]">
+          <Link
+            to="volunteer"
+            className="border p-8 rounded-[50px] bg-white shadow relative top-0 right-0 transition-all duration-200 ease-in-out hover:-top-1 hover:-right-1"
+          >
             <div>
               <i className="fa-solid fa-briefcase text-blue-500 text-3xl"></i>
             </div>
@@ -33,7 +36,7 @@ const Signup = () => {
               <span className="text-white bg-purple-600 px-2">Volunteer</span>{" "}
               looking for Assignments
             </p>
-          </div>
+          </Link>
         </div>
         <div className="text-center">
           <Link to="login">
