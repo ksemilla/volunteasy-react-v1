@@ -17,6 +17,7 @@ import VolunteerSignupFlow2 from "../views/signup/volunteer/VolunteerSignupFlow2
 import ProfileDetail1 from "../views/signup/volunteer/ProfileDetail1"
 import ProfileDetail2 from "../views/signup/volunteer/ProfileDetail2"
 import ProfileDetail3 from "../views/signup/volunteer/ProfileDetail3"
+import ProfileDetail4 from "../views/signup/volunteer/ProfileDetail4"
 
 const Router = () => {
   return (
@@ -48,6 +49,7 @@ const Router = () => {
               <Route path="profile-detail-1" element={<ProfileDetail1 />} />
               <Route path="profile-detail-2" element={<ProfileDetail2 />} />
               <Route path="profile-detail-3" element={<ProfileDetail3 />} />
+              <Route path="profile-detail-4" element={<ProfileDetail4 />} />
             </Route>
           </Route>
         </Route>

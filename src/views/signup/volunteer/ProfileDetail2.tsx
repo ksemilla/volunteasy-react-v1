@@ -1,6 +1,9 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 export default function ProfileDetail2() {
+  const [showInput, setShowInput] = useState(false)
+
   return (
     <div className="max-w-5xl m-auto text-center mt-10">
       <p className="py-5">2 of 6</p>
@@ -11,15 +14,161 @@ export default function ProfileDetail2() {
         Your experience will be visible on your profile for organisations to
         view
       </p>
-      <div className="max-w-md m-auto mt-14 space-y-4">
-        <div className="bg-purple-50 border-2 border-dashed rounded-xl cursor-pointer py-8 space-y-2">
-          <div>
-            <i className="fa-solid fa-plus text-3xl bg-purple-600 px-4 py-3 text-white rounded-full" />
+      <div className="mt-14 space-y-4">
+        {!showInput ? (
+          <div
+            onClick={() => setShowInput(true)}
+            className="max-w-md m-auto bg-purple-50 border-2 border-dashed rounded-xl cursor-pointer py-8 space-y-2"
+          >
+            <div>
+              <i className="fa-solid fa-plus text-3xl bg-purple-600 px-4 py-3 text-white rounded-full" />
+            </div>
+            <p className="text-gray-500">Add experience</p>
           </div>
-          <p className="text-gray-500">Add experience</p>
-        </div>
+        ) : (
+          <div className="max-w-2xl m-auto border border-purple-600 rounded-xl divide-y divide-purple-600">
+            <h1 className="text-2xl text-purple-600 py-4">
+              Add work experience
+            </h1>
+            <div className="px-20 py-10 space-y-2">
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm text-left font-medium leading-6 text-gray-900"
+                >
+                  Title
+                </label>
+                <div className="">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="Example: Business Analyst | Web Developer | Copy Writer"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm text-left font-medium leading-6 text-gray-900"
+                >
+                  Company
+                </label>
+                <div className="">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm text-left font-medium leading-6 text-gray-900"
+                >
+                  Location
+                </label>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="Example: London"
+                    />
+                  </div>
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      placeholder="United Kingdom"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <div>
+                  <label
+                    htmlFor="username"
+                    className="block text-sm text-left font-medium leading-6 text-gray-900"
+                  >
+                    Start Date
+                  </label>
+                  <div className="">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                      <input
+                        type="month"
+                        name="username"
+                        id="username"
+                        autoComplete="username"
+                        className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label
+                    htmlFor="username"
+                    className="block text-sm text-left font-medium leading-6 text-gray-900"
+                  >
+                    End Date
+                  </label>
+                  <div className="">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                      <input
+                        type="month"
+                        name="username"
+                        id="username"
+                        autoComplete="username"
+                        className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm text-left font-medium leading-6 text-gray-900"
+                >
+                  Description
+                </label>
+                <div className="">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-purple-600">
+                    <textarea
+                      name="username"
+                      id="username"
+                      autoComplete="username"
+                      className="block w-full flex-1 border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      rows={5}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="pt-10">
+                <button className="text-white text-xl px-10 py-3 bg-purple-600 hover:br-purple-700 rounded-full">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
-        <div className="relative flex items-start">
+        <div className="max-w-md m-auto relative flex items-start">
           <div className="flex h-6 items-center">
             <input
               id="comments"
