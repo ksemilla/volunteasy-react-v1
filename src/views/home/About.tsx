@@ -36,10 +36,29 @@ const About = () => {
       </p>
       <div
         style={{ backgroundColor: "#8a3dc4" }}
-        className="flex justify-center py-2"
+        className="flex flex-col items-center justify-center py-8 space-y-4"
       >
         <div>
           <img src="/logo-filled.png" />
+        </div>
+        <div className="flex space-x-8">
+          <div>
+            <i className="fa-brands fa-linkedin text-3xl text-white" />
+          </div>
+          <div>
+            <i className="fa-brands fa-instagram text-3xl text-white" />
+          </div>
+          <div>
+            <i className="fa-brands fa-facebook text-3xl text-white" />
+          </div>
+        </div>
+        <div className="flex divide-x divide-gray-100/20 space-x-2 text-white">
+          <div className="px-2">
+            <i className="fa-regular fa-copyright"></i>{" "}
+            <span>2023 Volunteasy</span>
+          </div>
+          <span className="px-2">Terms and Condition</span>
+          <span className="px-2">Privacy Policy</span>
         </div>
       </div>
     </section>

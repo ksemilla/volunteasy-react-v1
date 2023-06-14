@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 
 export default function ProfileDetail6() {
   return (
-    <div className="max-w-5xl m-auto text-center mt-10">
-      <p className="py-5">6 of 6</p>
+    <div className="max-w-5xl m-auto text-center mt-6">
+      <p className="py-5 text-gray-700">6 of 6</p>
       <h1 className="text-purple-600 text-4xl">
         Tell the world about yourself!
       </h1>
@@ -12,7 +12,7 @@ export default function ProfileDetail6() {
         stand out the best!
       </p>
 
-      <div className="flex flex-col items-center gap-4">
+      <div className="mt-6 flex flex-col items-center gap-4">
         <div className="rounded-full bg-gray-600 inline-flex w-20 h-20 justify-center items-end overflow-hidden">
           <i className="fa-solid fa-user text-gray-200 text-7xl"></i>
         </div>
@@ -99,15 +99,15 @@ export default function ProfileDetail6() {
 
       <div className="max-w-lg m-auto  mt-32 flex items-center justify-between">
         <Link
-          to="/signup/volunteer/flow-2"
-          className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+          to="/signup/volunteer/profile-detail-5"
+          className="inline-flex items-center gap-x-2 rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-500 border shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
         >
           <i className="fa-solid fa-chevron-left"></i>
           Back
         </Link>
 
         <Link
-          to="/signup/volunteer/profile-detail-2"
+          to="/dashboard/volunteer"
           className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
         >
           Done

@@ -5,14 +5,23 @@ const Nav = () => {
     <nav className="py-4 flex items-center justify-between space-x-10 font-medium border-b border-gray-100">
       <div className="flex items-center space-x-10">
         <img src="./logo1.png" alt="logo" width="100" />
-        <span>Volunteer</span>
-        <span>Organization</span>
-        <span>About</span>
+        <span className="text-gray-700 cursor-pointer transition-all duration-100 ease-in hover:text-purple-600">
+          Volunteer
+        </span>
+        <span className="text-gray-700 cursor-pointer transition-all duration-100 ease-in hover:text-purple-600">
+          Organization
+        </span>
+        <span className="text-gray-700 cursor-pointer transition-all duration-100 ease-in hover:text-purple-600">
+          About
+        </span>
       </div>
       <div className="flex items-center space-x-10">
-        <button className="border-2 border-purple-600 px-4 py-1 rounded-full">
+        <Link
+          to="/login"
+          className="border-2 border-purple-600 px-4 py-1 rounded-full"
+        >
           Login
-        </button>
+        </Link>
 
         <Link
           to="/signup"

@@ -8,7 +8,9 @@ const SignupNav = () => {
           <img src="/logo3.png" width={200} />
         </div>
       </div>
-      <Outlet />
+      <div className="mb-32">
+        <Outlet />
+      </div>
     </div>
   )
 }

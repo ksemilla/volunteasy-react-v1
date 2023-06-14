@@ -259,7 +259,7 @@ const OrgSignupFlow2 = () => {
         <div className="mt-6 flex items-center justify-between">
           <Link
             to="/signup/org/flow-1"
-            className="inline-flex items-center gap-x-2 rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+            className="inline-flex items-center gap-x-2 rounded-md px-3.5 py-2.5 text-sm font-semibold text-gray-500 border shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
             <i className="fa-solid fa-chevron-left"></i>
             Back

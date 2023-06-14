@@ -13,7 +13,9 @@ export default function VolunteerSignupNav() {
           <Example />
         </div>
       </div>
-      <Outlet />
+      <div className="mb-32">
+        <Outlet />
+      </div>
     </div>
   )
 }

@@ -20,6 +20,9 @@ import ProfileDetail3 from "../views/signup/volunteer/ProfileDetail3"
 import ProfileDetail4 from "../views/signup/volunteer/ProfileDetail4"
 import ProfileDetail5 from "../views/signup/volunteer/ProfileDetail5"
 import ProfileDetail6 from "../views/signup/volunteer/ProfileDetail6"
+import OrgDashboard from "../views/dashboards/org/OrgDashboard"
+import VolunteerDashboard from "../views/dashboards/volunteer/VolunteerDashboard"
+import Login from "../views/login/Login"
 
 const Router = () => {
   return (
@@ -57,6 +60,11 @@ const Router = () => {
             </Route>
           </Route>
         </Route>
+        <Route path="dashboard">
+          <Route path="org" element={<OrgDashboard />} />
+          <Route path="volunteer" element={<VolunteerDashboard />} />
+        </Route>
+        <Route path="login" element={<Login />} />
       </Route>
     </Routes>
   )
