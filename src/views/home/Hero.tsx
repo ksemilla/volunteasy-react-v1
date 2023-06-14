@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { sleep } from "../../utils"
+import Image from "../../components/Image"
 
 const Hero = () => {
   const [word1, setWord1] = useState("")
@@ -54,7 +55,8 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex-1 flex justify-center items-center">
-          <img src="/hero-img.png" width={400} />
+          {/* <img src="/hero-img-small.png" width={400} /> */}
+          <Image src="/hero-img.png" src2="/hero-img-small.png" />
         </div>
       </div>
     </section>

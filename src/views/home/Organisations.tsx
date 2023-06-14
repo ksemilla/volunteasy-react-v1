@@ -5,7 +5,7 @@ const Organisations = () => {
       <p className="max-w-[500px] m-auto text-gray-400 text-center font-light mt-3">
         Find skilled volunteers for any assignments
       </p>
-      <div className="py-48 px-2">
+      <div className="py-32 px-2">
         <Features />
       </div>
     </section>
