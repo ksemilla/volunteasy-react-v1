@@ -121,6 +121,7 @@ const Processes = () => {
       isVisible &&
         !done &&
         (async function () {
+          setDone(true)
           for (let i = 0; i < 5; i++) {
             await sleep(800).then(() => {
               setProcesses((pro) => {
@@ -136,7 +137,6 @@ const Processes = () => {
               })
             })
           }
-          setDone(true)
         })()
     }, 0)
     return () => {

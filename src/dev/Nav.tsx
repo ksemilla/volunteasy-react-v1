@@ -7,10 +7,12 @@ const DevNav = () => {
         <Link to="/" className="px-2">
           Home
         </Link>
-        <span className="px-2 cursor-default text-gray-400">Org Signup</span>
-        <span className="px-2 cursor-default text-gray-400">
+        <Link to="/signup/org" className="px-2">
+          Org Signup
+        </Link>
+        <Link to="/signup/volunteer" className="px-2">
           Volunteer Signup
-        </span>
+        </Link>
       </nav>
       <Outlet />
     </div>
