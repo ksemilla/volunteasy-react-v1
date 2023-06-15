@@ -10,6 +10,9 @@ const VerifyEmail = () => {
     handleSubmit,
     formState: { errors },
   } = useForm()
+
+  const onSubmit = handleSubmit((_data) => {})
+
   return (
     <div className="mt-10 border border-purple-500 rounded-[50px] p-10 sm:mx-auto sm:w-full sm:max-w-3xl">
       <div className="text-center mb-10">
@@ -44,33 +47,35 @@ const VerifyEmail = () => {
                   </Disclosure.Button>
                   <Disclosure.Panel className="max-w-lg m-auto w-full pt-4 pb-2 text-sm text-gray-500">
                     <div className="flex items-center space-x-8">
-                      <TextField
-                        type="text"
-                        size="small"
-                        fullWidth
-                        {...register("email")}
-                        error={errors?.email ? true : false}
-                        placeholder="Enter Email"
-                        sx={{
-                          flex: 1,
-                          "& input::placeholder": {
-                            fontSize: "12px",
-                          },
-                        }}
-                      />
-                      <Button
-                        sx={{
-                          backgroundColor: "#f8f6fb",
-                          color: "gray",
-                          fontWeight: 200,
-                          flex: 1,
-                          borderRadius: "999px",
-                          border: "1px solid #c4c3c5",
-                        }}
-                        size="large"
-                      >
-                        Update and Resend
-                      </Button>
+                      <form onSubmit={onSubmit}>
+                        <TextField
+                          type="text"
+                          size="small"
+                          fullWidth
+                          {...register("email")}
+                          error={errors?.email ? true : false}
+                          placeholder="Enter Email"
+                          sx={{
+                            flex: 1,
+                            "& input::placeholder": {
+                              fontSize: "12px",
+                            },
+                          }}
+                        />
+                        <Button
+                          sx={{
+                            backgroundColor: "#f8f6fb",
+                            color: "gray",
+                            fontWeight: 200,
+                            flex: 1,
+                            borderRadius: "999px",
+                            border: "1px solid #c4c3c5",
+                          }}
+                          size="large"
+                        >
+                          Update and Resend
+                        </Button>
+                      </form>
                     </div>
                   </Disclosure.Panel>
                 </>
