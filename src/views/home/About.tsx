@@ -1,6 +1,9 @@
 const About = () => {
   return (
-    <section className="bg-purple-50 pt-16 rounded-t-[100px]">
+    <section
+      className="pt-16 rounded-t-[100px]"
+      style={{ backgroundColor: "#f8f6fb" }}
+    >
       <h1 className="text-center text-4xl font-medium">About</h1>
       <p className="px-10 pb-20 mt-8 text-xl font-light text-center">
         Welcome to our platform, a company that was founded with the goal of
@@ -36,29 +39,34 @@ const About = () => {
       </p>
       <div
         style={{ backgroundColor: "#8a3dc4" }}
-        className="flex flex-col items-center justify-center py-8 space-y-4"
+        className="flex flex-col items-center justify-center py-1 space-y-4"
       >
         <div>
-          <img src="/logo-filled.png" />
+          <img src="/logo-filled.png" width={80} />
         </div>
-        <div className="flex space-x-8">
-          <div>
-            <i className="fa-brands fa-linkedin text-3xl text-white" />
+        <div className="grid grid-cols-3 w-full">
+          <div />
+          <div className="flex justify-center space-x-6">
+            <div>
+              <i className="fa-brands fa-linkedin text-3xl text-white" />
+            </div>
+            <div>
+              <i className="fa-brands fa-instagram text-3xl text-white" />
+            </div>
+            <div>
+              <i className="fa-brands fa-facebook text-3xl text-white" />
+            </div>
           </div>
-          <div>
-            <i className="fa-brands fa-instagram text-3xl text-white" />
+          <div className="flex items-end justify-end">
+            <div className="text-[11px] font-[200] flex divide-x divide-gray-100/20 text-white">
+              <div>
+                <i className="fa-regular fa-copyright"></i>{" "}
+                <span>2023 Volunteasy</span>
+              </div>
+              <span>Terms and Condition</span>
+              <span>Privacy Policy</span>
+            </div>
           </div>
-          <div>
-            <i className="fa-brands fa-facebook text-3xl text-white" />
-          </div>
-        </div>
-        <div className="flex divide-x divide-gray-100/20 space-x-2 text-white">
-          <div className="px-2">
-            <i className="fa-regular fa-copyright"></i>{" "}
-            <span>2023 Volunteasy</span>
-          </div>
-          <span className="px-2">Terms and Condition</span>
-          <span className="px-2">Privacy Policy</span>
         </div>
       </div>
     </section>

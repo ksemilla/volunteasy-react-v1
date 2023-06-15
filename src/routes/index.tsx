@@ -4,9 +4,6 @@ import DevNav from "../dev/Nav"
 import SignupNav from "../views/signup/SignupNav"
 import OrgSignup from "../views/signup/org/OrgSignup"
 import CompleteSignup from "../views/signup/org/CompleteSignup"
-import OrgSignupFlow1 from "../views/signup/org/OrgSignupFlow1"
-import OrgSignupFlow2 from "../views/signup/org/OrgSignupFlow2"
-import OrgSignupFlow3 from "../views/signup/org/OrgSignupFlow3"
 import VerifyEmail from "../views/signup/org/VerifyEmail"
 import VolunteerSignup from "../views/signup/volunteer/VolunteerSignup"
 import VolunteerCompleteSignup from "../views/signup/volunteer/VolunteerCompleteSignup"
@@ -23,6 +20,7 @@ import ProfileDetail6 from "../views/signup/volunteer/ProfileDetail6"
 import OrgDashboard from "../views/dashboards/org/OrgDashboard"
 import VolunteerDashboard from "../views/dashboards/volunteer/VolunteerDashboard"
 import Login from "../views/login/Login"
+import OrgSignupFlow from "../views/signup/org/OrgSignupFlow"
 
 const Router = () => {
   return (
@@ -35,9 +33,7 @@ const Router = () => {
             <Route path="" element={<OrgSignup />} />
             <Route path="complete-signup" element={<CompleteSignup />} />
             <Route path="verify-email" element={<VerifyEmail />} />
-            <Route path="flow-1" element={<OrgSignupFlow1 />} />
-            <Route path="flow-2" element={<OrgSignupFlow2 />} />
-            <Route path="flow-3" element={<OrgSignupFlow3 />} />
+            <Route path="flow" element={<OrgSignupFlow />} />
           </Route>
           <Route path="volunteer">
             <Route element={<SignupNav />}>

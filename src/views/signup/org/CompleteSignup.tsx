@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
-import { classNames } from "../../../utils"
 import { Link, useNavigate } from "react-router-dom"
+import { Button, TextField } from "@mui/material"
 
 const CompleteSignup = () => {
   const navigate = useNavigate()
@@ -14,102 +14,86 @@ const CompleteSignup = () => {
   })
 
   return (
-    <div className="mt-10 border border-purple-500 rounded-[50px] p-10 sm:mx-auto sm:w-full sm:max-w-md">
-      <h1 className="my-4 text-center text-2xl font-semibold text-gray-700">
+    <div className="mt-10 border border-[#8a3bc4] rounded-[50px] py-2 px-32 sm:mx-auto sm:w-full sm:max-w-2xl">
+      <h1 className="my-4 text-center text-xl font-semibold text-gray-700">
         Complete Sign Up
       </h1>
-      <form className="space-y-6" onSubmit={onSubmit}>
+      <form className="space-y-6" onSubmit={onSubmit} noValidate>
         <div>
           <div className="mt-2">
-            <input
-              {...register("firstName", { required: true })}
-              id="firstName"
-              name="firstName"
-              type="text"
-              autoComplete="firstName"
+            <TextField
+              fullWidth
+              {...register("first_name", { required: true })}
+              error={errors?.first_name ? true : false}
+              helperText={errors?.first_name ? "This field is required" : false}
               placeholder="First Name"
-              className={classNames(
-                "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6",
-                errors?.firstName
-                  ? "ring-red-300 focus:ring-red-600 placeholder:text-red-400"
-                  : "focus:ring-purple-600 placeholder:text-gray-400"
-              )}
             />
           </div>
           <div className="mt-4">
-            <input
-              {...register("lastName", { required: true })}
-              id="lastName"
-              name="lastName"
-              type="text"
-              autoComplete="lastName"
-              placeholder="Last Name"
-              className={classNames(
-                "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6",
-                errors?.lastName
-                  ? "ring-red-300 focus:ring-red-600 placeholder:text-red-400"
-                  : "focus:ring-purple-600 placeholder:text-gray-400"
-              )}
+            <TextField
+              fullWidth
+              {...register("org_name", { required: true })}
+              error={errors?.org_name ? true : false}
+              helperText={errors?.org_name ? "This field is required" : false}
+              placeholder="Organisation Name"
             />
           </div>
           <div className="mt-4">
-            <div className="relative mt-2 rounded-md shadow-sm">
-              <input
-                {...register("password", { required: true })}
-                type="password"
-                name="password"
-                id="password"
-                className={classNames(
-                  "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6",
-                  errors?.password
-                    ? "ring-red-300 focus:ring-red-600 placeholder:text-red-400"
-                    : "focus:ring-purple-600 placeholder:text-gray-400"
-                )}
-                placeholder="Create Password"
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <i className="fa-solid fa-eye-slash"></i>
-              </div>
-            </div>
+            <TextField
+              type="password"
+              fullWidth
+              {...register("password", { required: true })}
+              error={errors?.password ? true : false}
+              helperText={errors?.password ? "This field is required" : false}
+              placeholder="Create Password"
+              InputProps={{
+                endAdornment: (
+                  <i className="fa-solid fa-eye-slash text-gray-400"></i>
+                ),
+              }}
+            />
           </div>
           <div className="mt-4">
-            <div className="relative mt-2 rounded-md shadow-sm">
-              <input
-                {...register("confirmPassword", { required: true })}
-                type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                placeholder="Confirm Password"
-                className={classNames(
-                  "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6",
-                  errors?.confirmPassword
-                    ? "ring-red-300 focus:ring-red-600 placeholder:text-red-400"
-                    : "focus:ring-purple-600 placeholder:text-gray-400"
-                )}
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                <i className="fa-solid fa-eye-slash"></i>
-              </div>
-            </div>
+            <TextField
+              type="password"
+              fullWidth
+              {...register("confirm_password", {
+                required: true,
+                validate: {
+                  equalWithPassword: (v, fv) => v === fv.password,
+                },
+              })}
+              error={errors?.confirm_password ? true : false}
+              helperText={
+                errors?.confirm_password?.type === "required"
+                  ? "This field is required"
+                  : errors?.confirm_password?.type === "equalWithPassword"
+                  ? "Must be equal with password"
+                  : ""
+              }
+              placeholder="Confirm Password"
+              InputProps={{
+                endAdornment: (
+                  <i className="fa-solid fa-eye-slash text-gray-400"></i>
+                ),
+              }}
+            />
           </div>
         </div>
 
-        <p className="text-center text-sm text-gray-500">
+        <p className="text-center text-xs text-gray-500">
           By clicking Sign Up, you agree <br />
-          to <span className="text-purple-600 font-semibold">
+          to <span className="text-[#8a3bc4] font-semibold">
             Terms of Use
           </span>{" "}
           and{" "}
-          <span className="text-purple-600 font-semibold">Privacy Policy</span>
+          <span className="text-[#8a3bc4] font-semibold">Privacy Policy</span>
         </p>
 
         <div>
-          <button
-            type="submit"
-            className="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
-          >
-            Signup
-          </button>
+          <Button type="submit" variant="contained" disableElevation fullWidth>
+            Sign Up
+          </Button>
         </div>
       </form>
 
@@ -117,7 +101,7 @@ const CompleteSignup = () => {
         Already have an account?{" "}
         <Link
           to="/login"
-          className="font-semibold leading-6 text-purple-600 hover:text-purple-500"
+          className="font-semibold leading-6 text-[#8a3bc4] hover:text-purple-500"
         >
           Login
         </Link>

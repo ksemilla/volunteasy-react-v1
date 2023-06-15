@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { Link } from "react-router-dom"
 
 const Nav = () => {
@@ -16,18 +17,23 @@ const Nav = () => {
         </span>
       </div>
       <div className="flex items-center space-x-10">
-        <Link
-          to="/login"
-          className="border-2 border-purple-600 px-4 py-1 rounded-full"
-        >
-          Login
+        <Link to="/login">
+          <Button
+            variant="outlined"
+            sx={{ borderRadius: "999px", color: "black" }}
+          >
+            Login
+          </Button>
         </Link>
 
-        <Link
-          to="/signup"
-          className="border border-purple-600 bg-purple-600 px-4 py-1 rounded-full text-white hover:bg-purple-700"
-        >
-          Signup
+        <Link to="/signup">
+          <Button
+            variant="contained"
+            sx={{ borderRadius: "999px" }}
+            disableElevation
+          >
+            Sign Up
+          </Button>
         </Link>
       </div>
     </nav>

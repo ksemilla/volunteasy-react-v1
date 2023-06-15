@@ -1,17 +1,24 @@
 import { Disclosure } from "@headlessui/react"
+import { Button, TextField } from "@mui/material"
+import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 
 const VerifyEmail = () => {
   const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
   return (
     <div className="mt-10 border border-purple-500 rounded-[50px] p-10 sm:mx-auto sm:w-full sm:max-w-3xl">
-      <div className="text-center">
-        <i className="fa-solid fa-envelope-circle-check text-blue-600 text-5xl"></i>
+      <div className="text-center mb-10">
+        <i className="fa-solid fa-envelope-circle-check text-blue-600 text-7xl"></i>
       </div>
-      <h1 className="my-4 text-center text-3xl font-semibold text-gray-700">
+      <h1 className="my-4 text-center text-3xl text-gray-700">
         Verify email to proceed
       </h1>
-      <p className="text-center text-lg text-gray-500 font-light">
+      <p className="text-center text-lg text-gray-500 font-extralight">
         We just sent an email to: [
         <span className="font-semibold">display email in Bold</span>]<br />
         Please check your email and click on the link provided to verify your
@@ -19,34 +26,51 @@ const VerifyEmail = () => {
       </p>
       <div>
         <div className="w-full px-4 pt-16">
-          <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
+          <div className="mx-auto rounded-2xl bg-white p-2">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                    <span>Change Email</span>
+                  <Disclosure.Button className="flex max-w-md m-auto w-full items-center space-x-2 rounded-lg  px-4 py-2 text-left text-md font-medium text-[#8a3bc4] focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                     {open ? (
-                      <i className="fa-solid fa-chevron-down"></i>
-                    ) : (
-                      <i className="fa-solid fa-chevron-up"></i>
-                    )}
-                  </Disclosure.Button>
-                  <Disclosure.Panel className=" pt-4 pb-2 text-sm text-gray-500">
-                    <div className="flex items-center justify-between">
-                      <div className="relative rounded-md shadow-sm">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <i className="fa-solid fa-envelope text-gray-500"></i>
-                        </div>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-600 sm:text-sm sm:leading-6"
-                        />
+                      <div className="bg-[#8a3bc4] w-6 h-5 rounded flex items-center justify-center text-white">
+                        <i className="fa-solid fa-chevron-up"></i>
                       </div>
-                      <button className="bg-gray-50 rounded-full py-3 px-8 hover:bg-purple-400 hover:text-white">
+                    ) : (
+                      <div className="bg-[#8a3bc4] w-6 h-5 rounded flex items-center justify-center text-white">
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
+                    )}
+                    <span>Change Email</span>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="max-w-lg m-auto w-full pt-4 pb-2 text-sm text-gray-500">
+                    <div className="flex items-center space-x-8">
+                      <TextField
+                        type="text"
+                        size="small"
+                        fullWidth
+                        {...register("email")}
+                        error={errors?.email ? true : false}
+                        placeholder="Enter Email"
+                        sx={{
+                          flex: 1,
+                          "& input::placeholder": {
+                            fontSize: "12px",
+                          },
+                        }}
+                      />
+                      <Button
+                        sx={{
+                          backgroundColor: "#f8f6fb",
+                          color: "gray",
+                          fontWeight: 200,
+                          flex: 1,
+                          borderRadius: "999px",
+                          border: "1px solid #c4c3c5",
+                        }}
+                        size="large"
+                      >
                         Update and Resend
-                      </button>
+                      </Button>
                     </div>
                   </Disclosure.Panel>
                 </>
@@ -55,15 +79,19 @@ const VerifyEmail = () => {
             <Disclosure as="div" className="mt-2">
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full items-center justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                    <span>I need help verifying my email</span>
+                  <Disclosure.Button className="flex max-w-md m-auto w-full items-center space-x-2 rounded-lg  px-4 py-2 text-left text-md font-medium text-[#8a3bc4] focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                     {open ? (
-                      <i className="fa-solid fa-chevron-down"></i>
+                      <div className="bg-[#8a3bc4] w-6 h-5 rounded flex items-center justify-center text-white">
+                        <i className="fa-solid fa-chevron-up"></i>
+                      </div>
                     ) : (
-                      <i className="fa-solid fa-chevron-up"></i>
+                      <div className="bg-[#8a3bc4] w-6 h-5 rounded flex items-center justify-center text-white">
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
                     )}
+                    <span>I need help verifying my email</span>
                   </Disclosure.Button>
-                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500 space-y-4">
+                  <Disclosure.Panel className="px-4 pt-4 pb-2 text-center text-sm text-gray-500 space-y-4">
                     <div className="">
                       <h3 className="text-md text-gray-500 font-semibold">
                         Why do we ask for email confirmation?
@@ -103,12 +131,14 @@ const VerifyEmail = () => {
       </div>
 
       <div className="text-center mt-10">
-        <button
-          onClick={() => navigate("/signup/org/flow-1")}
-          className="bg-purple-600 text-white px-10 py-4 text-xl rounded-full hover:bg-purple-700"
+        <Button
+          onClick={() => navigate("/signup/org/flow")}
+          variant="contained"
+          disableElevation
+          sx={{ borderRadius: "999px" }}
         >
           Resend Verification Email
-        </button>
+        </Button>
       </div>
     </div>
   )

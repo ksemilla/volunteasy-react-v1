@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import { classNames, sleep } from "../../utils"
+import { Button } from "@mui/material"
+import { Link } from "react-router-dom"
 
 const Volunteers = () => {
   return (
-    <section className="bg-purple-50 pt-10 pb-10">
+    <section className="pt-10 pb-10" style={{ backgroundColor: "#f8f6fb" }}>
       <h1 className="text-center text-4xl font-medium">Volunteers</h1>
       <p className="max-w-[500px] m-auto text-gray-500 text-center font-light mt-4">
         Grow yourself and access to a wide range volunteering oppotunities that
@@ -15,10 +17,17 @@ const Volunteers = () => {
       <div className="max-w-[900px] m-auto pt-20">
         <Processes />
       </div>
-      <div className="relative text-center top-[70px]">
-        <button className="text-xl border border-purple-600 bg-purple-600 px-8 py-4 rounded-full text-white hover:bg-purple-700">
-          Get Started
-        </button>
+      <div className="relative text-center top-[60px]">
+        <Link to="/signup">
+          <Button
+            variant="contained"
+            sx={{ borderRadius: "999px", fontWeight: 200 }}
+            disableElevation
+            size="large"
+          >
+            Get Started
+          </Button>
+        </Link>
       </div>
     </section>
   )

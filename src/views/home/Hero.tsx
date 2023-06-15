@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import { sleep } from "../../utils"
 import Image from "../../components/Image"
+import { Button } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
 const Hero = () => {
+  const navigate = useNavigate()
   const [word1, setWord1] = useState("")
   const [word2, setWord2] = useState("")
 
@@ -53,6 +56,14 @@ const Hero = () => {
               <span className="text-purple-600">volunteering</span> your skills
             </p>
           </div>
+          <Button
+            onClick={() => navigate("/signup")}
+            variant="contained"
+            sx={{ borderRadius: "999px", fontWeight: 200 }}
+            disableElevation
+          >
+            Join now
+          </Button>
         </div>
         <div className="flex-1 flex justify-center items-center">
           {/* <img src="/hero-img-small.png" width={400} /> */}
